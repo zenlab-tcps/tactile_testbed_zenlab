@@ -1,0 +1,15 @@
+#!/bin/bash
+
+'''
+Script to give permissions to the Geomagic Touch haptic device.
+Run script as root using "sh <Filename>.sh" or just as "./<Filename>"
+'''
+
+GTUSBport=$(bash TouchDriver2022_04_04/ListUSBHapticDevices)
+
+echo $GTUSBport
+sudo chmod 777 $GTUSBport
+
+./TouchDriver2022_04_04/bin/Touch_Setup
+./TouchDriver2022_04_04/bin/Touch_Diagnostic
+
